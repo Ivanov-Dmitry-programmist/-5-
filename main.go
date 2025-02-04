@@ -29,13 +29,13 @@ Weight		float64       			// вес пользователя в кг
 // количество_повторов * длина_шага / м_в_км
 func (t Training) distance() float64 {
 	// вставьте ваш код ниже
-	return (t.Action * LenStep) / MInKm
+	return (float64(t.Action)) * LenStep) / MInKm
 }
 
 // meanSpeed возвращает среднюю скорость бега или ходьбы.
 func (t Training) meanSpeed() float64 {
 	// вставьте ваш код ниже
-	return Training.distance() / duration	
+	return  ((float64(t.Action) * LenStep) / MInKm) / duration
 }
 
 // Calories возвращает количество потраченных килокалорий на тренировке.
