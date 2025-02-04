@@ -19,7 +19,7 @@ const (
 type Training struct {
 TrainingType	string			        // тип тренировки
 Action		int                             // количество повторов(шаги, гребки при плавании)
-Lenstep		float64       			// длина одного шага или гребка в м
+LenStep		float64       			// длина одного шага или гребка в м
 Duration	time.Duration			// продолжительность тренировки
 Weight		float64       			// вес пользователя в кг
 }
@@ -35,7 +35,7 @@ func (t Training) distance() float64 {
 // meanSpeed возвращает среднюю скорость бега или ходьбы.
 func (t Training) meanSpeed() float64 {
 	// вставьте ваш код ниже
-	return distance / duration	
+	return Training.distance() / duration	
 }
 
 // Calories возвращает количество потраченных килокалорий на тренировке.
