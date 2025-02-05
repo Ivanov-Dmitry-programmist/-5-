@@ -58,7 +58,13 @@ type InfoMessage struct {
 // TrainingInfo возвращает труктуру InfoMessage, в которой хранится вся информация о проведенной тренировке.
 func (t Training) TrainingInfo() InfoMessage {
 	// вставьте ваш код ниже
-	return InfoMessage.String()
+	return InfoMessage{
+	TrainingType:   TrainingType,     
+	Duration:	Duration, 	   
+	Distance:	Distance,
+	Speed:		Speed,    
+	Calories:	Calories,
+	}
 }
 
 // String возвращает строку с информацией о проведенной тренировке.
