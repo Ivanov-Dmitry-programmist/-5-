@@ -95,7 +95,6 @@ const (
 type Running struct {
 	// добавьте необходимые поля в структуру
 	Training
-	CaloriesCalculator
 }
 	
 // Calories возввращает количество потраченных килокалория при беге.
@@ -131,7 +130,6 @@ const (
 type Walking struct {
 	// добавьте необходимые поля в структуру
 	Training
-	CaloriesCalculator
 	Height		float64 // рост пользователя
 }
 
