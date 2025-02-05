@@ -56,8 +56,7 @@ type InfoMessage struct {
 }
 
 // TrainingInfo возвращает труктуру InfoMessage, в которой хранится вся информация о проведенной тренировке.
-func (t Training) TrainingInfo() 
-InfoMessage {
+func (t Training) TrainingInfo() InfoMessage {
 	// вставьте ваш код ниже
 	return InfoMessage{
 	TrainingType:   t.TrainingType,     
@@ -109,8 +108,7 @@ func (r Running) Calories() float64 {
 
 // TrainingInfo возвращает структуру InfoMessage с информацией о проведенной тренировке.
 // Это переопределенный метод TrainingInfo() из Training.
-func (r Running) TrainingInfo() 
-InfoMessage {
+func (r Running) TrainingInfo() InfoMessage {
 	// вставьте ваш код ниже
 	return InfoMessage{
 		TrainingType: r.TrainingType,
@@ -147,8 +145,7 @@ func (w Walking) Calories() float64 {
 
 // TrainingInfo возвращает структуру InfoMessage с информацией о проведенной тренировке.
 // Это переопределенный метод TrainingInfo() из Training.
-func (w Walking) TrainingInfo() 
-InfoMessage {
+func (w Walking) TrainingInfo() InfoMessage {
 	// вставьте ваш код ниже
 	return InfoMessage{
 		TrainingType: w.TrainingType,
