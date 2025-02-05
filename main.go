@@ -59,11 +59,11 @@ type InfoMessage struct {
 func (t Training) TrainingInfo() InfoMessage {
 	// вставьте ваш код ниже
 	return InfoMessage{
-	TrainingType:   TrainingType,     
-	Duration:	Duration, 	   
-	Distance:	Distance,
-	Speed:		Speed,    
-	Calories:	Calories,
+	TrainingType:   t.TrainingType,     
+	Duration:	t.Duration, 	   
+	Distance:	t.Distance,
+	Speed:		t.Speed,    
+	Calories:	t.Calories,
 	}
 }
 
