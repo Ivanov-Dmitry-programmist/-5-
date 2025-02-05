@@ -131,7 +131,6 @@ const (
 type Walking struct {
 	// добавьте необходимые поля в структуру
 	Training
-	Training
 	CaloriesCalculator
 	Height		float64 // рост пользователя
 }
