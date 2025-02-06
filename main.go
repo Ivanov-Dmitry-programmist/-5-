@@ -103,7 +103,8 @@ type Running struct {
 // Это переопределенный метод Calories() из Training.
 func (r Running) Calories() float64 {
 	// вставьте ваш код ниже
-	return ((float64(CaloriesMeanSpeedMultiplier) * (((float64(r.Action) * LenStep) / MInKm) / float64(r.Duration)) + CaloriesMeanSpeedShift)* r.Weight / MInKm * r.Duration * MinInHours)
+	mSpeed:= (float64(r.Action) * LenStep) / MInKm / float64(r.Duration)
+	return ((float64(CaloriesMeanSpeedMultiplier) * (float64(CaloriesMeanSpeedMultiplier) * mSpeed) + CaloriesMeanSpeedShift)* r.Weight / MInKm * r.Duration.Hours() * MinInHours)
 }
 
 // TrainingInfo возвращает структуру InfoMessage с информацией о проведенной тренировке.
@@ -140,7 +141,7 @@ type Walking struct {
 // Это переопределенный метод Calories() из Training.
 func (w Walking) Calories() float64 {
 	// вставьте ваш код ниже
-	mSpeed:= (float64(t.Action) * LenStep) / MInKm / float64(t.Duration)
+	mSpeed:= (float64(w.Action) * LenStep) / MInKm / float64(w.Duration)
 	return ((CaloriesWeightMultiplier * w.Weight + (math.Pow(mSpeed * float64(KmHInMsec), 2)) / (w.Height * CmInM)* CaloriesSpeedHeightMultiplier * w.Weight) * w.Duration.Hours() * MinInHours)
 }
 
@@ -187,7 +188,8 @@ func (s Swimming) meanSpeed() float64 {
 // Это переопределенный метод Calories() из Training.
 func (s Swimming) Calories() float64 {
 	// вставьте ваш код ниже
-	return ((((float64(s.Action) * LenStep) / MInKm) / float64(s.Duration) + SwimmingCaloriesMeanSpeedShift)* SwimmingCaloriesWeightMultiplier * s.Weight * s.Duration) 
+	mSpeed:= (float64(s.Action) * LenStep) / MInKm / float64(s.Duration)
+	return (mSpeed + SwimmingCaloriesMeanSpeedShift)* SwimmingCaloriesWeightMultiplier * s.Weight * s.Duration.Hours()) 
 }
 
 // TrainingInfo returns info about swimming training.
@@ -206,14 +208,14 @@ func (s Swimming) TrainingInfo() InfoMessage {
 // ReadData возвращает информацию о проведенной тренировке.
 func ReadData(training CaloriesCalculator) string {
 	// получите количество затраченных калорий
-	calories := CaloriesCalculator.Calories()
+	//calories := CaloriesCalculator.Calories()
 
 	// получите информацию о тренировке
-	info := CaloriesCalculator.TrainingInfo()
+	info := training.TrainingInfo()
 	// добавьте полученные калории в структуру с информацией о тренировке
-	return calories
+	//return calories
 
-	return fmt.Sprint(info)
+	//return fmt.Sprint(info)
 }
 
 func main() {
