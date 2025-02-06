@@ -215,7 +215,7 @@ func ReadData(training CaloriesCalculator) string {
 	// добавьте полученные калории в структуру с информацией о тренировке
 	//return calories
 
-	//return fmt.Sprint(info)
+	return fmt.Sprint(info)
 }
 
 func main() {
