@@ -189,7 +189,7 @@ func (s Swimming) meanSpeed() float64 {
 func (s Swimming) Calories() float64 {
 	// вставьте ваш код ниже
 	mSpeed:= (float64(s.Action) * LenStep) / MInKm / float64(s.Duration)
-	return (mSpeed + SwimmingCaloriesMeanSpeedShift)* SwimmingCaloriesWeightMultiplier * s.Weight * s.Duration.Hours()) 
+	return (mSpeed + SwimmingCaloriesMeanSpeedShift)* SwimmingCaloriesWeightMultiplier * s.Weight * s.Duration.Hours() 
 }
 
 // TrainingInfo returns info about swimming training.
