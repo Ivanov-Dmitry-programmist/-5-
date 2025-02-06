@@ -95,6 +95,7 @@ const (
 type Running struct {
 	// добавьте необходимые поля в структуру
 	Training
+	Calories   float64
 }
 	
 // Calories возввращает количество потраченных килокалория при беге.
@@ -125,6 +126,7 @@ const (
 type Walking struct {
 	// добавьте необходимые поля в структуру
 	Training
+	Calories    	float64
 	Height		float64 // рост пользователя
 }
 
@@ -157,6 +159,7 @@ const (
 type Swimming struct {
 	// добавьте необходимые поля в структуру
 	Training
+	Calories	float64
 	LengthPool	int // длина бассейна
 	CountPool	int // количество пересечений бассейна
 }
@@ -196,13 +199,13 @@ func (s Swimming) TrainingInfo() InfoMessage {
 // ReadData возвращает информацию о проведенной тренировке.
 func ReadData(training CaloriesCalculator) string {
 	// получите количество затраченных калорий
-	calories := training.Calories()
+	//calories := training.Calories()
 
 	// получите информацию о тренировке
 	info := training.TrainingInfo()
 	// добавьте полученные калории в структуру с информацией о тренировке
 	//return calories
-	return fmt.Sprint(calories)
+	//return fmt.Sprint(calories)
 	return fmt.Sprint(info)
 }
 
