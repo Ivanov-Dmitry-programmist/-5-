@@ -29,7 +29,7 @@ Weight		float64       			// вес пользователя в кг
 // количество_повторов * длина_шага / м_в_км
 func (t Training) distance() float64 {
 	// вставьте ваш код ниже
-	return float64(t.Action) * LenStep / MInKm
+	return float64(t.Action) * t.LenStep / MInKm
 }
 
 // meanSpeed возвращает среднюю скорость бега или ходьбы.
@@ -81,8 +81,8 @@ func (i InfoMessage) String() string {
 // CaloriesCalculator интерфейс для структур: Running, Walking и Swimming.
 type CaloriesCalculator interface {
 	// добавьте необходимые методы в интерфейс
-	Calories()
-	TrainingInfo()
+	Calories()	float64
+	TrainingInfo()	InfoMessage
 }
 
 // Константы для расчета потраченных килокалорий при беге.
